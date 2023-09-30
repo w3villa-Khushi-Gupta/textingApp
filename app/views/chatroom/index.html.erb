@@ -1,0 +1,51 @@
+<h4 class="ui center aligned icon header">
+  <i class="circular grey envelope icon"></i>
+  Say Something
+</h4>
+<div class="ui two column grid">
+  <div class="twelve wide column">
+    <div class="ui card fluid raised chatbox">
+      <div class="content" id="message-box">
+        <div class="ui feed" id="message-container">
+          <%= render @messages%>
+        </div>
+      </div>
+      <div class="extra content">
+        <%= form_for(@message, html:{class: "ui reply form", role: "form"}, url: message_path, remote: true) do |f|%>
+            <div class="field">
+                <div class="ui fluid icon input ">
+                    <%= f.text_field :body%>
+                    <%= f.button '<i class="icon send"></i>'.html_safe %>
+                </div>
+            </div>
+        <%end%>              
+      </div>
+    </div>
+  </div>
+  <div class="four wide column">
+    <div class="ui card fluid raised chatbox">
+      <div class="content">
+        <div class="ui vertical menu">
+          <a class="active teal item">
+            Inbox
+            <div class="ui teal left pointing label">1</div>
+          </a>
+          <a class="item">
+            Spam
+            <div class="ui label">51</div>
+          </a>
+          <a class="item">
+            Updates
+            <div class="ui label">1</div>
+          </a>
+          <div class="item">
+            <div class="ui transparent icon input">
+              <input type="text" placeholder="Search mail...">
+              <i class="search icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

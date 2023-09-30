@@ -1,0 +1,40 @@
+<h2 class="ui center aligned header">
+   Welcome to TextingApp-<I>a complete Chat App</I>
+</h2>
+<h4 class="ui center aligned icon header">
+  <i class="circular  power off grey icon"></i>
+  Login to continue
+</h4>
+
+<div class="ui placeholder segment">
+  <div class="ui two column very relaxed stackable grid">
+    <div class="column">
+      <%=form_for(:session, html: {class: "ui form", role: "form" }, url: login_path) do |f|%>
+        <div class="field">
+          <%=f.label :username%>
+          <div class="ui left icon input">
+            <%= f.text_field :username, placeholder: "Username"%>
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <%=f.label :password%>
+          <div class="ui left icon input">
+            <%= f.password_field :password, placeholder: "Password"%>
+            <i class="lock icon"></i>
+          </div>
+        </div>
+        <%= f.button "Login", class: "ui submit grey button" %>
+      <%end%>
+    </div>
+    <div class="middle aligned column">
+      <div class="ui big grey button">
+        <i class="signup ic.downcaseon"></i>
+        Sign Up
+      </div>
+    </div>
+  </div>
+  <div class="ui vertical divider">
+    Or
+  </div>
+</div>

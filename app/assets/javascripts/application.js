@@ -11,5 +11,34 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery
 //= require turbolinks
-//= require_tree .
+//= require semantic-ui
+
+
+submit_message =function(){
+  $('#message_body').on('keydown',function(e){
+    if(e.keyCode == 13){
+      $('button').click;
+      setTimeout(()=>{e.target.value = ""},500) 
+    };
+
+  });
+};
+
+scroll_bottom = function(){
+  if($('#message-box').length>0){
+    $('#message-box').scrollTop($('#message-box')[0].scrollHeight);
+  }
+}
+
+
+$(document).ready(function() {
+    $('.ui.dropdown').dropdown();
+    $('.message .close').on('click', function() {
+      $(this).closest('.message').transition('fade');
+    });
+    submit_message();
+    scroll_bottom();
+  });
+
